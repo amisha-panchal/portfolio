@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amisha Panchal | Content Writer & Web Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda+SC:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Edu+AU+VIC+WA+NT+Hand:wght@400..700&family=Faculty+Glyphic&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Funnel+Display:wght@300..800&family=Libertinus+Math&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #0f1116;
+      color: #e0e0e0;
+    }
+
+    nav {
+      background: #1a1d24;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 30px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav .logo {
+      font-size: 1.6em;
+      color: #00c9a7;
+      font-weight: 600;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      align-items: center;
+    }
+
+    nav ul li {
+      margin-left: 25px;
+    }
+
+    nav ul li a {
+      color: white;
+      font-size: 1em;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #00c9a7;
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .menu-toggle div {
+      width: 25px;
+      height: 3px;
+      background: white;
+      margin: 4px 0;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        background-color: #1a1d24;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        display: none;
+      }
+
+      nav ul.show {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+    }
+
+    header {
+      background: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
+      color: #fff;
+      text-align: center;
+      padding: 100px 20px 70px;
+      position: relative;
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 1;
+    }
+
+    header .content {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .profile-pic {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      border: 3px solid #00c9a7;
+      object-fit: cover;
+      box-shadow: 0 0 15px rgba(0, 201, 167, 0.6);
+      transition: transform 0.3s ease;
+    }
+
+    .profile-pic:hover {
+      transform: scale(1.05);
+    }
+
+    .intro-text {
+      max-width: 500px;
+      text-align: left;
+    }
+
+    .intro-text h1 {
+      font-size: 2.6em;
+      margin: 10px 0 0;
+    }
+
+    .intro-text p {
+      font-size: 1.2em;
+      color: #cdece7;
+    }
+
+    .highlight {
+      color: #00c9a7;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 60px 30px;
+      max-width: 900px;
+      margin: 50px auto;
+      background: #1e2129;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0, 201, 167, 0.05);
+      transition: all 0.3s ease;
+    }
+
+    section:hover {
+      box-shadow: 0 0 30px rgba(0, 201, 167, 0.15);
+      transform: translateY(-2px);
+    }
+
+    h2 {
+      color: #00c9a7;
+      border-bottom: 2px solid #00c9a7;
+      padding-bottom: 6px;
+      margin-bottom: 20px;
+    }
+
+    ul {
+      padding-left: 20px;
+      line-height: 2;
+    }
+
+    ul li::marker {
+      color: #00c9a7;
+    }
+
+    p,
+    li {
+      font-size: 1.05em;
+      color: #d3d3d3;
+    }
+
+    .contact {
+      background-color: #22252e;
+    }
+
+    a {
+      color: #00c9a7;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .resume-button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #00c9a7;
+      color: #0f1116;
+      border-radius: 6px;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .resume-button:hover {
+      background-color: #00b199;
+      text-decoration: none;
+    }
+
+    footer {
+      background-color: #1a1d24;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 1s ease-out, transform 1s ease-out;
+    }
+
+    .appear {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="logo">Portfolio</div>
+    <div class="menu-toggle" id="menu-toggle">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <ul id="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#project">Project</a></li>
+      <li><a href="#contact">Contact</a></li>
+     
+      <li>
+        <a href="https://www.linkedin.com/in/amisha-panchal-333a47283" target="_blank" title="LinkedIn">
+          <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" style="width:18px; vertical-align:middle;">
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <header>
+    <div class="content fade-in">
+      <img src="portfolio.jpeg" alt="Amisha Panchal - Freelancer" class="profile-pic" />
+      <div class="intro-text">
+        <h1>Amisha Panchal</h1>
+        <p><span class="highlight">Content Writer</span> & <span class="highlight">Website Developer</span> | Crafting Words & Web Experiences</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- ABOUT -->
+  <section id="about" class="fade-in">
+    <h2>About Me</h2>
+    <p>
+      I'm a creative and technically-inclined content writer and web developer with a background in B.Sc. (CA & IT) and hands-on
+      experience in full-stack development. I blend the power of words and web to help brands tell their story,
+      sell their products, and engage their audience with a strong digital presence.
+    </p>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="fade-in">
+    <h2>What I Offer</h2>
+    <ul>
+      <li>SEO Blog & Article Writing (Tech, IT, Lifestyle)</li>
+      <li>Website & Landing Page Content</li>
+      <li>Responsive Website Development (HTML, CSS, JavaScript, Django)</li>
+      <li>Product Descriptions (E-commerce)</li>
+      <li>Technical Writing (Python, Cybersecurity, Networking)</li>
+      <li>Social Media Captions & Branding Posts</li>
+      <li>Email Newsletters & Web Copy</li>
+    </ul>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="fade-in">
+    <h2>Technical Strengths</h2>
+    <ul>
+      <li><strong>Languages:</strong> Python (Django), Core Java, HTML, CSS, JS</li>
+      <li><strong>Tools:</strong> WordPress, Canva, Google Docs, GitHub, SQLite</li>
+      <li><strong>Concepts:</strong> Cybersecurity, Networking, MVC Architecture</li>
+      <li><strong>Soft Skills:</strong> Time Management, Team Collaboration, Research, Creativity</li>
+    </ul>
+  </section>
+
+  <!-- PROJECT -->
+  <section id="project" class="fade-in">
+    <h2>Featured Project</h2>
+    <p>
+      <strong>Timeless Treasure – E-commerce Watch Website</strong><br>
+      Developed a dynamic e-commerce platform using Django and SQLite with OTP verification, secure payments,
+      real-time cart, and CRUD operations — all with clean UI and clear content tailored for modern shopping experiences.
+    </p>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact fade-in">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:panchalamisha1801@gmail.com">panchalamisha1801@gmail.com</a></p>
+    <p>Phone: +91 8849493443</p>
+    <p>Location: Ahmedabad, India</p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/amisha-panchal-333a47283" target="_blank">www.linkedin.com/in/amisha-panchal-333a47283</a></p>
+    <p><a href="Amisha(Resume).pdf" download class="resume-button">📄 Download Resume</a></p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2025 Amisha Panchal | Portfolio Website <br />
+    <a href="https://www.linkedin.com/in/amisha-panchal-333a47283" target="_blank" style="color:#00c9a7; text-decoration:none;">🔗 Connect on LinkedIn</a>
+  </footer>
+
+  <!-- JS -->
+  <script>
+    const faders = document.querySelectorAll('.fade-in');
+    const appearOptions = {
+      threshold: 0.2,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const appearOnScroll = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('appear');
+        observer.unobserve(entry.target);
+      });
+    }, appearOptions);
+
+    faders.forEach(fader => {
+      appearOnScroll.observe(fader);
+    });
+
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+    });
+  </script>
+</body>
+</html>
